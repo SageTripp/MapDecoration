@@ -12,7 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "AMapCompose"
+rootProject.name = "MapDecoration"
 include ':app'
 include ':AMapcompose'
 include ':amap-ktx'
+include ':baidu-map-ktx'
+include ':baidu-map-compose'

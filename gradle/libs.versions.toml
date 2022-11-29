@@ -14,6 +14,7 @@ junit = "4.13.2"
 kotlin = "1.7.20"
 material = "1.5.0"
 amap = "9.5.0"
+bmap = "7.5.4"
 
 [libraries]
 androidx-compose-activity = { module = "androidx.activity:activity-compose", version.ref = "activitycompose" }
@@ -36,6 +37,7 @@ kotlin = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "ko
 material = { module = "com.google.android.material:material", version.ref = "material" }
 test-junit = { module = "junit:junit", version.ref = "junit" }
 amap = { module = "com.amap.api:3dmap", version.ref = "amap" }
+bmap = { module = "com.baidu.lbsyun:BaiduMapSDK_Map", version.ref = "bmap" }
 
 [plugins]
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }

@@ -55,7 +55,10 @@ dependencies {
     //3D地图so及jar
     implementation project(':AMapcompose')
     implementation(project(":amap-ktx"))
+    implementation(project(":baidu-map-ktx"))
+    implementation(project(":baidu-map-compose"))
     implementation libs.amap
+    implementation libs.bmap
 
     implementation libs.androidx.core
     implementation platform(libs.androidx.compose.bom)
