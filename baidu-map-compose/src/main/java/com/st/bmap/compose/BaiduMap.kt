@@ -171,7 +171,7 @@ private fun MapView.lifecycleObserver(
             Lifecycle.Event.ON_RESUME -> this.onResume()
             Lifecycle.Event.ON_PAUSE -> this.onPause()
             Lifecycle.Event.ON_STOP -> {}
-            Lifecycle.Event.ON_DESTROY -> this.onDestroy()
+            Lifecycle.Event.ON_DESTROY ->{}
 
             else -> throw IllegalStateException()
         }
