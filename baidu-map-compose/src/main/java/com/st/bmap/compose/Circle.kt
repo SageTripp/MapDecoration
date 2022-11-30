@@ -35,7 +35,7 @@ internal class CircleNode(
  */
 @Composable
 @BaiduMapComposable
-fun Circle(
+fun BaiduMapScope.Circle(
     center: LatLng,
     radius: Int = 0,
     holes: List<Hole> = emptyList(),

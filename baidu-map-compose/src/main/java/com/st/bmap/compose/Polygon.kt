@@ -33,7 +33,7 @@ internal class PolygonNode(
  */
 @Composable
 @BaiduMapComposable
-fun Polygon(
+fun BaiduMapScope.Polygon(
     points: List<LatLng>,
     fillColor: Color = Color.Black,
     holes: List<Hole> = emptyList(),

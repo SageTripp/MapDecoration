@@ -71,7 +71,7 @@ class GroundOverlayPosition private constructor(
  */
 @Composable
 @BaiduMapComposable
-fun GroundOverlay(
+fun BaiduMapScope.GroundOverlay(
     position: GroundOverlayPosition,
     image: BitmapDescriptor,
     anchor: Offset = Offset(0.5f, 0.5f),

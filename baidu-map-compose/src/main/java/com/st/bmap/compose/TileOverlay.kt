@@ -25,7 +25,7 @@ private class TileOverlayNode(
  */
 @Composable
 @BaiduMapComposable
-fun TileOverlay(
+fun BaiduMapScope.TileOverlay(
     tileProvider: TileProvider,
     positionFromBounds: LatLngBounds,
     maxTileTmp: Int = 209715200,

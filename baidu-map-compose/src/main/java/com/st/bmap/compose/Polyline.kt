@@ -37,7 +37,7 @@ internal class PolylineNode(
  */
 @Composable
 @BaiduMapComposable
-fun Polyline(
+fun BaiduMapScope.Polyline(
     points: List<LatLng>,
     color: Color = Color.Black,
     lineCapType: PolylineOptions.LineCapType = PolylineOptions.LineCapType.LineCapButt,

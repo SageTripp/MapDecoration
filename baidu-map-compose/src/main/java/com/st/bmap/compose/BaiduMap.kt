@@ -61,7 +61,7 @@ fun BaiduMap(
     onMapLoaded: () -> Unit = {},
     onMyLocationClick: (MyLocationData) -> Boolean = { false },
     onPOIClick: (MapPoi) -> Unit = {},
-    content: (@Composable @BaiduMapComposable () -> Unit)? = null,
+    content: (@Composable @BaiduMapComposable BaiduMapScope.() -> Unit)? = null,
 ) {
     // When in preview, early return a Box with the received modifier preserving layout
     if (LocalInspectionMode.current) {
@@ -71,9 +71,11 @@ fun BaiduMap(
 
     val context = LocalContext.current
     val mapView = remember { MapView(context, mapOptionsFactory()) }
+    val mapScope = remember(mapView) { BaiduMapScope(mapView) }
 
     AndroidView(modifier = modifier, factory = { mapView })
     MapLifecycle(mapView)
+
 
     // rememberUpdatedState and friends are used here to make these values observable to
     // the subcomposition without providing a new content function each recomposition
@@ -102,7 +104,7 @@ fun BaiduMap(
                     mapUiSettings = currentUiSettings,
                     contentPadding = contentPadding,
                 )
-                currentContent?.invoke()
+                currentContent?.invoke(mapScope)
             }
         }
     }
@@ -171,7 +173,7 @@ private fun MapView.lifecycleObserver(
             Lifecycle.Event.ON_RESUME -> this.onResume()
             Lifecycle.Event.ON_PAUSE -> this.onPause()
             Lifecycle.Event.ON_STOP -> {}
-            Lifecycle.Event.ON_DESTROY ->{}
+            Lifecycle.Event.ON_DESTROY -> {}
 
             else -> throw IllegalStateException()
         }

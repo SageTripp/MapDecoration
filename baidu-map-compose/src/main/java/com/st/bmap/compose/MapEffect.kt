@@ -18,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope
  */
 @Composable
 @BaiduMapComposable
-public fun MapEffect(key1: Any?, block: suspend CoroutineScope.(BaiduMap) -> Unit) {
+public fun BaiduMapScope.MapEffect(key1: Any?, block: suspend CoroutineScope.(BaiduMap) -> Unit) {
     val map = (currentComposer.applier as MapApplier).map
     LaunchedEffect(key1 = key1) {
         block(map)

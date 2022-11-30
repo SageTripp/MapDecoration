@@ -142,7 +142,7 @@ fun rememberMarkerState(
  */
 @Composable
 @BaiduMapComposable
-fun Marker(
+fun BaiduMapScope.Marker(
     state: MarkerState,
     alpha: Float = 1.0f,
     anchor: Offset = Offset(0.5f, 1.0f),
