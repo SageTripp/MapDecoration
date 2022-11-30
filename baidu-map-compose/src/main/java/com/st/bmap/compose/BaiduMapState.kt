@@ -12,7 +12,6 @@ import com.baidu.mapapi.map.MapStatus
 import com.baidu.mapapi.map.MapStatusUpdate
 import com.baidu.mapapi.map.MapStatusUpdateFactory
 import com.baidu.mapapi.map.Projection
-import com.baidu.mapapi.model.LatLng
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
@@ -33,8 +32,6 @@ inline fun rememberBaiduMapState(
     BaiduMapState().apply(init)
 }
 
-val BeiJing = LatLng(39.914271, 116.404269)
-
 /**
  * A state object that can be hoisted to control and observe the map's map state.
  * A [BaiduMapState] may only be used by a single [BaiduMap] composable at a time
@@ -43,7 +40,7 @@ val BeiJing = LatLng(39.914271, 116.404269)
  * @param status the initial map status
  */
 class BaiduMapState(
-    status: MapStatus = MapStatus.Builder().target(BeiJing).zoom(18f).build()
+    status: MapStatus = MapStatus.Builder().zoom(18f).build()
 ) {
     var mapStatusChangeStartedReason: MapStatusChangeStartedReason by mutableStateOf(
         MapStatusChangeStartedReason.NO_MOVEMENT_YET
