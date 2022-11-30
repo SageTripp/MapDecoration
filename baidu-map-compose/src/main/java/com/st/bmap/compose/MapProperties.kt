@@ -3,8 +3,8 @@ package com.st.bmap.compose
 import android.graphics.Bitmap
 import androidx.annotation.FloatRange
 import androidx.compose.ui.unit.DpOffset
-import androidx.compose.ui.unit.IntOffset
 import com.baidu.mapapi.map.BaiduMap
+import com.baidu.mapapi.map.LogoPosition
 import com.baidu.mapapi.map.MapLanguage
 
 internal val DefaultMapProperties = MapProperties()
@@ -12,6 +12,9 @@ internal val DefaultMapProperties = MapProperties()
 /**
  * Data class for properties that can be modified on the map.
  *
+ * @param logoPosition 百度地图logo的位置
+ * @param zoomControllerEnabled 是否显示缩放控件
+ * @param scaleControllerEnabled 是否显示比例尺
  * @param baiduHeatMapEnabled 是否打开百度热力图图层(百度自有数据图层) 注：地图层级大于11时，可显示热力图
  * @param compassPosition 指南针的位置
  * @param compassIcon 指南针自定义图标
@@ -33,6 +36,9 @@ internal val DefaultMapProperties = MapProperties()
  * @param minZoomLevel 设置最小缩放级别 缩放级别范围为[3, 20],超出范围将按最小级别计算
  */
 data class MapProperties(
+    val logoPosition: LogoPosition = LogoPosition.logoPostionleftBottom,
+    val zoomControllerEnabled: Boolean = true,
+    val scaleControllerEnabled: Boolean = true,
     val baiduHeatMapEnabled: Boolean = false,
     val isIndoorEnabled: Boolean = false,
     val compassPosition: DpOffset = DpOffset.Unspecified,

@@ -19,7 +19,7 @@ private object MapNodeRoot : MapNode
 
 internal class MapApplier(
     val map: BaiduMap,
-    private val mapView: MapView,
+    internal val mapView: MapView,
 ) : AbstractApplier<MapNode>(MapNodeRoot) {
 
     private val decorations = mutableListOf<MapNode>()

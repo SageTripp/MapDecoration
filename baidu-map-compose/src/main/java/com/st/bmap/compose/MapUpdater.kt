@@ -102,6 +102,7 @@ internal inline fun MapUpdater(
     contentPadding: PaddingValues,
 ) {
     val map = (currentComposer.applier as MapApplier).map
+    val mapView = (currentComposer.applier as MapApplier).mapView
     val density = LocalDensity.current
     val layoutDirection = LocalLayoutDirection.current
     ComposeNode<MapPropertiesNode, MapApplier>(
@@ -132,6 +133,10 @@ internal inline fun MapUpdater(
                 }
             }
         }
+
+        set(mapProperties.logoPosition) { mapView.logoPosition = it }
+        set(mapProperties.zoomControllerEnabled) { mapView.showZoomControls(it) }
+        set(mapProperties.scaleControllerEnabled) { mapView.showScaleControl(it) }
 
         set(mapProperties.baiduHeatMapEnabled) { map.isBaiduHeatMapEnabled = it }
         set(mapProperties.isIndoorEnabled) { map.setIndoorEnable(it) }
